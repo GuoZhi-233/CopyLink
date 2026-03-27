@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "CopyLink For Picture",
+  "version": "1.1",
+  "description": "一键收集当前网页的所有图片链接，支持按数字排序、一键复制和一键下载。",
+  "permissions":[
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

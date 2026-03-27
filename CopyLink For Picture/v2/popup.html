@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>CopyLink For Picture</title>
+  <style>
+    /* 增加全局边框盒模型，防止 padding 撑破宽度 */
+    * { box-sizing: border-box; }
+    
+    /* 稍微加宽到了 400px，让元素更舒展 */
+    body { 
+      width: 400px; 
+      padding: 12px; 
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: #f9f9f9; 
+    }
+    h3 { margin-top: 0; margin-bottom: 12px; text-align: center; color: #333; }
+    
+    button { 
+      width: 100%; padding: 8px; margin: 4px 0; 
+      border: none; border-radius: 4px; cursor: pointer; 
+      background-color: #007bff; color: white; font-weight: bold;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #0056b3; }
+    
+    /* 自定义工具栏样式 */
+    .input-group { display: flex; gap: 6px; margin: 4px 0; align-items: center; }
+    .input-group input { 
+      flex: 1; 
+      min-width: 0; /* 关键修复：防止 input 默认宽度过大撑破屏幕 */
+      padding: 7px; border: 1px solid #ccc; 
+      border-radius: 4px; font-size: 12px;
+    }
+    .input-group input:focus { outline: none; border-color: #007bff; }
+    .input-group button { 
+      width: auto; margin: 0; padding: 7px 12px; 
+      background-color: #fd7e14; white-space: nowrap; 
+      flex-shrink: 0; /* 保证按钮不会被压缩 */
+    }
+    .input-group button:hover { background-color: #e86e04; }
+
+    #sortNum { background-color: #6c757d; }
+    #sortNum:hover { background-color: #5a6268; }
+    
+    .button-group { display: flex; gap: 6px; margin-top: 4px; }
+    #copyLinks { background-color: #28a745; }
+    #copyLinks:hover { background-color: #218838; }
+    #downloadLinks { background-color: #17a2b8; }
+    #downloadLinks:hover { background-color: #138496; }
+    
+    textarea { 
+      width: 100%; height: 130px; margin-top: 8px; 
+      padding: 6px; resize: none; 
+      border: 1px solid #ccc; border-radius: 4px; font-size: 12px;
+      white-space: pre; overflow-wrap: normal; overflow-x: scroll;
+    }
+    textarea:focus { outline: none; border-color: #007bff; }
+    #status { margin-top: 8px; font-size: 12px; color: #d9534f; text-align: center; font-weight: bold; min-height: 16px; }
+  </style>
+</head>
+<body>
+  <h3>CopyLink For Picture</h3>
+  
+  <button id="getImages">收集当前页图片链接</button>
+  <button id="sortNum">按链接末尾数字排序</button>
+  
+  <div class="input-group">
+    <input type="text" id="filterKeyword" placeholder="保留包含字 (如: imgIndex)">
+    <button id="applyFilter">筛选保留</button>
+  </div>
+  
+  <div class="input-group">
+    <input type="text" id="prefixText" placeholder="开头 (如: ')">
+    <input type="text" id="suffixText" placeholder="结尾 (如: ',)">
+    <button id="applyFormat">加前后缀</button>
+  </div>
+  
+  <div class="button-group">
+    <button id="copyLinks">一键复制</button>
+    <button id="downloadLinks">一键下载</button>
+  </div>
+  
+  <textarea id="linkOutput" placeholder="提取的图片链接将显示在这里..."></textarea>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

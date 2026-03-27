@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>CopyLink For Picture</title>
+  <style>
+    body { width: 320px; padding: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; }
+    h3 { margin-top: 0; text-align: center; color: #333; }
+    button { 
+      width: 100%; padding: 8px; margin: 5px 0; 
+      border: none; border-radius: 4px; cursor: pointer; 
+      background-color: #007bff; color: white; font-weight: bold;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #0056b3; }
+    .button-group { display: flex; gap: 8px; }
+    .button-group button { background-color: #6c757d; }
+    .button-group button:hover { background-color: #5a6268; }
+    #copyLinks { background-color: #28a745; }
+    #copyLinks:hover { background-color: #218838; }
+    textarea { 
+      width: 100%; height: 150px; margin-top: 10px; 
+      padding: 5px; box-sizing: border-box; resize: none; 
+      border: 1px solid #ccc; border-radius: 4px; font-size: 12px;
+    }
+    #status { margin-top: 8px; font-size: 12px; color: #d9534f; text-align: center; font-weight: bold;}
+  </style>
+</head>
+<body>
+  <h3>CopyLink For Picture</h3>
+  
+  <button id="getImages">1. 收集当前页图片链接</button>
+  
+  <div class="button-group">
+    <button id="sortAsc">A-Z 排序</button>
+    <button id="sortDesc">Z-A 排序</button>
+  </div>
+  
+  <button id="copyLinks">2. 一键复制所有链接</button>
+  
+  <textarea id="linkOutput" placeholder="提取的图片链接将显示在这里..."></textarea>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
