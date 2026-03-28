@@ -66,3 +66,73 @@
 欢迎提交 Issue 报告 Bug 或者提出新功能建议！如果你有代码优化方案，也非常欢迎提交 Pull Request。
 
 如果这个小工具帮助到了你，请点右上角的 **⭐ Star** 支持一下！
+
+----------------------------------------------------------------------
+# 🖼️ CopyLink For Picture
+
+**CopyLink For Picture** is a lightweight and efficient browser extension. It is designed to help users extract all image links from a webpage with one click, providing an all-in-one solution including **smart sorting, keyword filtering, custom prefix/suffix formatting, one-click copying, and batch downloading**.
+
+It is specifically optimized for webpages using "lazy loading" techniques (such as **WeChat Official Account articles**), capable of accurately capturing hidden, real image links.
+
+---
+
+## ✨ Core Features
+
+- 📥 **One-Click Collection**: Bypasses webpage lazy loading limits to extract all real image links (supports both `data-src` and standard `src`).
+- 🔢 **Smart Sorting**: Automatically extracts numbers at the end of URLs and sorts them in ascending order (links without numbers are automatically placed at the bottom), perfect for handling sequentially named image groups.
+- 🔍 **Precise Filtering**: Supports inputting keywords (e.g., `imgIndex`) to retain target links with one click, filtering out irrelevant web elements (like avatars, icons, etc.).
+- ✨ **Custom Formatting**: Supports batch adding **prefix** and **suffix** characters (e.g., `'` and `',`) to links, making it convenient for developers or typesetters to directly copy them as a code array format.
+- 📋 **One-Click Copy**: Copies the processed links to the system clipboard with one click.
+- ⬇️ **Batch Download**: Quickly downloads all images in the extracted list to your local computer with one click.
+
+---
+
+## 🚀 Installation Guide (Developer Mode)
+
+Since this project is not currently published on the Chrome Web Store, you can easily install it via "Developer mode":
+
+1. **Download Source Code**: 
+   Click `Code` -> `Download ZIP` at the top right of the repository page and extract it to a specific folder (e.g., `D:\Extensions\CopyLink-For-Picture`).
+   *(Or use git clone: `git clone https://github.com/YourUsername/CopyLink-For-Picture.git`)*
+
+2. **Open Extensions Page**: 
+   Enter `chrome://extensions/` (or `edge://extensions/` for Edge) in the browser address bar and hit Enter.
+
+3. **Enable Developer Mode**: 
+   Turn on the **"Developer mode"** toggle at the top right of the page.
+
+4. **Load Extension**: 
+   Click the **"Load unpacked"** button at the top left, and select the `CopyLink-For-Picture` folder you just extracted.
+
+5. **Pin the Extension** (Optional): 
+   Find this extension in the puzzle piece icon at the top right of your browser, and click the "pin" icon to keep it on your toolbar for easy access.
+
+---
+
+## 💡 Usage Instructions
+
+Open any webpage containing images (e.g., a WeChat Official Account article), and click the extension icon at the top right of the browser to open the operation panel:
+
+1. **[收集当前页图片链接]** *(Collect image links)*: Click to grab all valid images on the webpage. *(Tip: For long articles, it's recommended to scroll to the bottom first to ensure all images are loaded or recognized)*
+2. **[按链接末尾数字排序]** *(Sort by trailing number)*: Rearranges the grabbed out-of-order image links in ascending numerical order.
+3. **[筛选保留]** *(Filter and keep)*: Enter a specific keyword (like `wx_fmt=jpeg` or `imgIndex`) in the left input box, and click this button to filter out all links that do not contain this keyword.
+4. **[加前后缀]** *(Add prefix/suffix)*: Enter the prefix and suffix you want to add in the left input boxes, and click to batch wrap and format the displayed text.
+5. **[一键复制]** / **[一键下载]** *(Copy / Download)*: Copy the final processed list to your clipboard or trigger the browser's batch download. *(Note: When downloading multiple images for the first time, the browser may prompt "Allow downloading multiple files" at the top. Please be sure to click "Allow")*
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML / CSS (Flexbox)
+- JavaScript (ES6+)
+- Chrome Extension Manifest V3
+- `chrome.scripting` API (DOM Injection)
+- `chrome.downloads` API (File Downloading)
+
+---
+
+## 🤝 Contributing & Feedback
+
+Issues and Pull Requests are always welcome! If you have any code optimization suggestions or bug reports, feel free to contribute.
+
+If this little tool helped you, please consider giving it a **⭐ Star** on the top right!
